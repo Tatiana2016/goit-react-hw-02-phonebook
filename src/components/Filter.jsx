@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Label = styled.label`
   display: block;
@@ -21,5 +22,10 @@ const Filter = ({ value, onChangeFilter }) => (
     <Input type="text" value={value} onChange={onChangeFilter} />
   </Label>
 );
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChangeFilter: PropTypes.func.isRequired,
+};
 
 export default Filter;
